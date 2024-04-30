@@ -1,0 +1,23 @@
+.linguagens .grid {
+    /* Seletor hiearárquico */
+    display: grid;
+    gap: 2em;
+}
+
+@media (min-width: 560px) {
+    .linguagens .grid {
+        grid-template-columns: 240px 240px 240px;
+    }
+}
+
+@media (min-width: 880) {
+    .linguagens .grid {
+        grid-template-columns: 240px 240px 240px;
+    }
+}
+
+.img-linguagens {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+}
