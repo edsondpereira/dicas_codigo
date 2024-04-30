@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Linguagem cSharp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 <p><img src="imagens/csharp.png" width="225" height="225" alt="cSharp" /></p>
-<p><a href="#prefixos">Prefixos utilizados em componentes</a><br />
+<p><a href="#prefixos">Prefixos utilizados em componentes</a><br>
   <a href="#eventos">Eventos</a><br />
-  <a href="#propriedades">Propriedades</a><br />
-  <a href="#comandos">Comandos</a><br />
+  <a href="#propriedades">Propriedades</a><br>
+  <a href="#comandos">Comandos</a><br>
   <a href="#dicas">Dicas</a></p>
 <hr />
 <table border="0" cellpadding="5" cellspacing="0">
@@ -95,7 +98,7 @@
         </tr>
       </table>
       <hr />
-      <h3><a name="eventos" id="eventos"></a>Eventos </h3>
+      <h5 class="text-primary"><a name="eventos" id="eventos"></a>Eventos </h5>
       <table width="499" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="69">click</td>
@@ -154,10 +157,9 @@
           <td>ocorre quando um controle é arrastado para outra posição</td>
         </tr>
       </table>
-      <hr />
-      <h3>
-      <span class="bloco"><a name="propriedades" id="propriedades"></a>Propriedades</span>
-      <h3>Abaixo estão listadas algumas propriedades de alguns componentes</h3>
+      <hr>
+      <h5 class="bloco text-primary"><a name="propriedades" id="propriedades"></a>Propriedades</h5>
+      <h5 class="text-primary">Abaixo estão listadas algumas propriedades de alguns componentes</h5>
       <b>Formulário</b><br />
       <b>StartPosition:</b>Define em que local da janela será exibido o formulário: <b>CenterScreen:</b>Abre o centro da janela<br />
       <b>FormBorderStyle:</b>Define como serão os estilos de borda do formulário:<b>FixedSingle/Fixed3D/FixedDialog:</b> Não permite redimensionar - <b>Sizable: </b>É o padrão, e permite redimensionar.<br />
@@ -228,9 +230,9 @@
 
       <hr />
 
-      <h3><a name="comandos" id="comandos"></a>Comandos e Métodos</h3>
+      <h5 class="text-primary"><a name="comandos" id="comandos"></a>Comandos e Métodos</h5>
 
-      <h3>WindowsFormApplication</h3>
+      <h6 class="text-primary">WindowsFormApplication</h6>
 
       <p><b>Application.Exit();</b> // Encerra a aplicação<br />
 
@@ -265,7 +267,7 @@
 
       </p>
 
-      <h3>Console Aplication</h3>
+      <h6 class="text-primary">Console Aplication</h6>
 
       <p><b>Console.Write(&quot;Fim da aplicação&quot;); </b>// Exibe a mensagem na  linha atual<br />
 
@@ -371,7 +373,7 @@
       </p>
       <hr />
 
-      <h3><span class="bloco"><a name="dicas" id="dicas"></a>Dicas - CSharp</span></h3>
+      <h6 class="text-primary"><a name="dicas" id="dicas"></a>Dicas - CSharp</h6>
       <p><a href="#ordem_form">Como mudar a ordem dos forms</a><br />
         <a href="#enter">Utilizando a tecla enter para mudar de caixa</a><br />
         <a href="#limpar_form">Como limpar todas caixas de um form</a><br />
