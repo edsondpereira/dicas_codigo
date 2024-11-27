@@ -1,0 +1,48 @@
+/* reset do css */
+* {
+    margin:0; padding:0; 
+    box-sizing: border-box;   /* tamanho dos elementos */ 
+}
+
+body {
+    font-family: 'Source Code Pro', monospace; height:10vh; font-size: 12px;
+    width: 1000px; margin-left: auto; margin-right: auto;
+    /* vh valor absoluto da tela --> viewport */
+}
+
+.linguagens .grid {
+    /* Seletor hiearárquico */
+    display: grid;
+    gap: 2em;
+}
+
+@media (min-width: 560px) {
+    .linguagens .grid {
+        grid-template-columns: 240px 240px 240px;
+    }
+}
+
+@media (min-width: 880) {
+    .linguagens .grid {
+        grid-template-columns: 240px 240px 240px;
+    }
+}
+
+.img-linguagens {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+figcaption {
+    margin-left: 35px;
+}
+
+h4 {
+    border-bottom: 2px solid;
+}

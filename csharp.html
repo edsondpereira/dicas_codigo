@@ -1,0 +1,778 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linguagem cSharp</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <h4 class="text-center text-primary">cSharp</h4>
+<p><img src="imagens/csharp.png" width="225" height="225" alt="cSharp" /></p>
+<p><a href="#prefixos">Prefixos utilizados em componentes</a><br>
+  <a href="#eventos">Eventos</a><br />
+  <a href="#propriedades">Propriedades</a><br>
+  <a href="#comandos">Comandos</a><br>
+  <a href="#dicas">Dicas</a></p>
+<hr />
+<table border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td width="721"><p><a name="prefixos" id="prefixos"></a><a href="#prefixos">Prefixos utilizados em componentes</a></p>
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="68">frm</td>
+          <td width="132">formulário</td>
+        </tr>
+        <tr>
+          <td>lbl</td>
+          <td>label</td>
+        </tr>
+        <tr>
+          <td>txt</td>
+          <td>textbox</td>
+        </tr>
+        <tr>
+          <td>btn</td>
+          <td>button</td>
+        </tr>
+        <tr>
+          <td>pic</td>
+          <td>picturebox</td>
+        </tr>
+        <tr>
+          <td>cmb</td>
+          <td>combobox</td>
+        </tr>
+        <tr>
+          <td>lst</td>
+          <td>listbox</td>
+        </tr>
+        <tr>
+          <td>gb</td>
+          <td>groupbox</td>
+        </tr>
+        <tr>
+          <td>tab</td>
+          <td>tabcontrol</td>
+        </tr>
+        <tr>
+          <td>dtp</td>
+          <td>datetimepicker</td>
+        </tr>
+        <tr>
+          <td>chk</td>
+          <td>checkbox</td>
+        </tr>
+        <tr>
+          <td>rb</td>
+          <td>radiobutton</td>
+        </tr>
+        <tr>
+          <td>tmr</td>
+          <td>timer</td>
+        </tr>
+        <tr>
+          <td>pbr</td>
+          <td>progressbar</td>
+        </tr>
+        <tr>
+          <td>msk</td>
+          <td>maskedtextbox</td>
+        </tr>
+        <tr>
+          <td>dgv</td>
+          <td>datagridview</td>
+        </tr>
+        <tr>
+          <td>mnu</td>
+          <td>menustrip</td>
+        </tr>
+        <tr>
+          <td>tlb</td>
+          <td>toolbar</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <hr />
+      <h5 class="text-primary"><a name="eventos" id="eventos"></a>Eventos </h5>
+      <table width="499" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="69">click</td>
+          <td width="430">ocorre quando é dado um clique com o mouse em um controle</td>
+        </tr>
+        <tr>
+          <td>load</td>
+          <td>ocorre quando o formulário está sendo carregado</td>
+        </tr>
+        <tr>
+          <td>shown</td>
+          <td>ocorre quando o formulário foi carregado</td>
+        </tr>
+        <tr>
+          <td>formclosing</td>
+          <td>ocorre quando o formulário está sendo descarregado da memória</td>
+        </tr>
+        <tr>
+          <td>enter</td>
+          <td>ocorre quando um controle recebe o foco (cursor). Ex: em um textbox</td>
+        </tr>
+        <tr>
+          <td>leave</td>
+          <td>ocorre quando um controle perde o foco (cursor). Ex: em um textbox</td>
+        </tr>
+        <tr>
+          <td>dblClick</td>
+          <td>ocorre quando é dado duplo clique com o mouse em um controle</td>
+        </tr>
+        <tr>
+          <td>mousedown</td>
+          <td>ocorre quando o botão do mouse é pressionado</td>
+        </tr>
+        <tr>
+          <td>mouseup</td>
+          <td>ocorre quando o botão do mouse é solto</td>
+        </tr>
+        <tr>
+          <td>mousemove</td>
+          <td>ocorre quando o mouse é deslocado sobre um controle</td>
+        </tr>
+        <tr>
+          <td>keydown</td>
+          <td>ocorre quando uma tecla é pressionada. Em KeyCode é obtido um número, representando o código da tecla</td>
+        </tr>
+        <tr>
+          <td>keypress</td>
+          <td>ocorre quando uma tecla é pressionada. É devolvido o valor ANSI. Ex: 65 representa a tecla A (maiúscula) </td>
+        </tr>
+        <tr>
+          <td>keyup</td>
+          <td>ocorre quando uma tecla é solta</td>
+        </tr>
+        <tr>
+          <td>dragdrop</td>
+          <td>ocorre quando um controle é arrastado para outra posição</td>
+        </tr>
+      </table>
+      <hr>
+      <h5 class="bloco text-primary"><a name="propriedades" id="propriedades"></a>Propriedades</h5>
+      <h5 class="text-primary">Abaixo estão listadas algumas propriedades de alguns componentes</h5>
+      <b>Formulário</b><br />
+      <b>StartPosition:</b>Define em que local da janela será exibido o formulário: <b>CenterScreen:</b>Abre o centro da janela<br />
+      <b>FormBorderStyle:</b>Define como serão os estilos de borda do formulário:<b>FixedSingle/Fixed3D/FixedDialog:</b> Não permite redimensionar - <b>Sizable: </b>É o padrão, e permite redimensionar.<br />
+
+      <b>MaximizeBox:</b>Não permite maximizar o formulário, se estiver como <u>False</u><br />
+
+      <b>BackgroundImage:</b>Define uma imagem de fundo para o formulário (<i>papel de parede</i>).<br />
+
+      <b>BackgroundImageLayout:</b>Define o posicionamento da imagem de fundo: <b>Tile:</b> Serão exibidas várias imagens, dependendo do tamanho da imagem - <b>Center:</b>Será exibida somente uma imagem, no centro do formulário</b> - <b>Stretch:</b>A imagem ficará ocupando todo o tamanho do formulário, não importando o tamanho do mesmo.<br />
+
+      <b>Size:</b> Define a largura e a altura do formulário.<br />
+
+      <b>WindowState:</b>Define como o formulário será aberto:<b>Normal:</b>Será aberto com o tamanho especificado na propriedade <u>Size</u> - <b>Maximized: </b>Será aberto maximizado</b><br />
+
+      <b>AcceptButton:</b> Permite definir por exemplo, qual o botão será executado, quando pressionarmos a tecla <b>Enter</b>.<br />
+
+      <b>CancelButton:</b> Permite definir por exemplo, qual o botão será executado, quando pressionarmos a tecla <b>Esc</b>.<br />
+
+      <b>IsMdiContainer:</b> Se estiver como <b>True</b>, será definido como formulário Pai <b>MDI</b>.<br />
+
+      <b>TopMost:</b> Se estiver como <b>True</b>, qualquer aplicação que você carregar, ficará sempre atrás do formulário.<br />
+
+      <hr />
+
+      <b>Label</b><br />
+
+      <b>AutoSize:</b> Se estiver como <b>True</b> que é o padrão, o texto inserido, fará com que o label seja ajustado automaticamente.<br />
+
+      <b>Backcolor:</b> Define a cor de fundo.<br />
+
+      <b>Forecolor:</b> Define a cor da fonte.<br />
+
+      <b>Font:</b> Permite alterar a fonte, estilos negrito e itálico, tamanho.<br />
+
+      <b>Image:</b> Permite inserir uma imagem.<br />
+
+      <b>ImageAlign:</b> Permite alinhar a imagem.</b><br />
+
+      <b>TextAlign:</b> Permite alinhar o texto.</b>
+
+      <hr />
+
+      <b>TextBox</b><br />
+
+      <b>Enabled:</b> Se estiver como <b>True</b>, está habilitado, ou seja: é permitida a inserção de textos no mesmo. Se estiver como <b>False</b>, está desabilitado, ou seja: bloqueada a inserção de textos.<br />
+
+      <b>Visible:</b> Se estiver como <b>True</b>, será exibido. Se estiver como <b>False</b>, ficará oculto.<br />
+
+      <b>TabIndex:</b> Define quando é pressionada a tecla Tab, para qual componente o foco será deslocado.<br />
+
+      <b>MultiLine:</b> Se estiver como <b>True</b>, terá várias linhas.</b> <b>ScrollBars:</b> Permite inserir barra de rolagem, tanto na vertical, horizontal, ou ambas.<br />
+
+      <b>ReadOnly:</b> Se estiver como <b>True</b>, o conteúdo não poderá ser alterado.<br />
+
+      <b>UseSystemPasswordChar:</b> Se estiver como <b>True</b>, quando em execução o caracter * (<i>asterisco</i>), será exibido no lugar do texto que estiver sendo digitado.<br />
+
+      <b>PasswordChar:</b> Permite definir um caracter para ser utilizado por exemplo na senha. O mais utilizado é o * (<i>asterisco</i>).<br />
+
+      <b>Modifiers:</b> O padrão é <b>Private</b>, ou seja: o componente só será reconhecido no formulário atual. Para que ele seja reconhecido em outros objetos (<i>formulário, classes</i>), deverá ser alterado para <b>Public</b>.<br />
+
+      <b>Maxlength:</b> Define o tamanho máximo de caracteres que podem ser inseridos em um caixa de textos.<br />
+
+      <b>TabStop:</b> Se estiver como <b>False</b>, ao pressionarmos a tecla <b>Tab</b>, o foco não passará por esta caixa de textos.<br />
+
+      <b>CharacterCasing:</b> Se estiver como <b>Upper</b>, o conteúdo que for inserido, ficará em letra maiúsculas - Se estiver como <b>Lower</b>, o conteúdo que for inserido, ficará em letra minúsculas.<br />
+
+      <b>Anchor:</b> É onde o componente será ancorado, ou seja: se você desejar que o componente acompanhe a mesma distância quando o formulário seja redimensionado, selecione para Bottom/Right.<br />
+
+      <hr />
+
+      <h5 class="text-primary"><a name="comandos" id="comandos"></a>Comandos e Métodos</h5>
+
+      <h6 class="text-primary">WindowsFormApplication</h6>
+
+      <p><b>Application.Exit();</b> // Encerra a aplicação<br />
+
+        <b>this.Close(); </b>// Descarrega o formulário, porém o mesmo ainda fica na memória<br />
+
+        <b>this.Dispose();</b> // Descarrega o formulário, retirando da memória<br />
+
+        <b>txtNome.Focus();</b> // Coloca o foco (cursor) nesta caixa <br />
+
+        <b>btnSair_Click(sender, e);</b> // Executa a codificação do botão sair. Observação: Só funciona se você tiver no escopo do controle (exemplo: private void button1_Click(object sender, EventArgs e)) dentro do parentêses: object sender, EventArgs e, pois métodos criados manualmente normalmente não tem. <br />
+
+        MessageBox.Show(&quot;Fim da Aplicação&quot;, &quot;Fim&quot;, MessageBoxButtons.OK, MessageBoxIcon.Warning); // Exibe uma caixa de mensagem<br />
+
+        O Visual Studio seja  VB, C#, exige a conversão, sem o qual a aplicação apresentará o erro acima.<br />
+
+        <strong>ToString()</strong> à É o método que  converte um número para string. É obrigatório o seu uso, já que não é possível  exibir um número sem que seja feita a conversão para string. <br />
+
+        <b>int.Parse</b> --&gt; Converte  uma string para inteiro. Isso é necessário, já que se você não converter, o c# irá concatenar (juntar) e não efetuar a operação aritmética. <br />
+		<b>Convert.ToInt16</b> --&gt; Converte  uma string para inteiro de 16 bits (pode ser utilizado também: ToInt32, ToInt64. Isso é necessário, já que se você não converter, o c# irá concatenar (juntar) e não efetuar a operação aritmética. <br />
+
+        int  n1 = 0, n2 = 0, soma = 0;<br />
+
+        n1 = int.Parse(txtN1.Text); //Converte  a string txtN1 para a variável inteira n1 <br />
+
+        n2 = int.Parse(txtN2.Text); <br />
+
+        soma = n1 + n2; //soma as variáveis n1 com n2 e guarda em soma<br />
+
+        lblResultado.Text =  soma.ToString(); //exibe o conteúdo da variável soma,  no label lblResultado. ToString, tem que ser colocado, pois a variável é int, e  o conteúdo vai ser exibido em uma caixa de texto é string.<br />
+
+        Caso isso não seja feito, será exibida a mensagem: cannot implicitly convert type 'int' to 'string'<br />
+
+      </p>
+
+      <h6 class="text-primary">Console Aplication</h6>
+
+      <p><b>Console.Write(&quot;Fim da aplicação&quot;); </b>// Exibe a mensagem na  linha atual<br />
+
+        <b>Console.WriteLine(&quot;Fim da aplicação&quot;);</b> // Exibe a mensagem na próxima linha<br />
+
+        <b>Console.Write(&quot;\nFim da aplicação&quot;);</b> // Exibe a mensagem na próxima linha. Você pode inserir vários \n, ou seja: Cada um representa  que o c# irá deslocar para a próxima linha. <br />
+
+        <b>Console.ReadLine</b> --&gt; Lê o conteúdo digitado pelo usuário. Exemplo:<br />
+
+        string nome;<br />
+
+        Console.Write(&quot;Informe seu nome:&quot;);<br />
+
+        nome = Console.ReadLine();<br />
+
+        int idade;<br />
+
+        Console.Write(&quot;Informe sua idade:&quot;);<br />
+
+        idade = int.Parse(Console.ReadLine()); // Foi necessário utilizar o int.Parse, já que o Console é string e a variável idade é tipo int (aceita somente números inteiros). O int.Parse converte string para int.<br />
+
+        <b>Console.ReadKey();</b> // Dá uma pausa para que seja possível ler o conteúdo das mensagens;<br />
+
+        <b>ToLower()</b> --&gt; Converte string para minúsculas;<br />
+
+        Exemplo:<br />
+
+        string email = &quot;Usuario@provedor.com.br&quot;;<br />
+
+        Console.Write(email.ToLower());<br />
+
+        <b>ToUpper() </b>--&gt; Converte string para maiúsculas;<br />
+
+        Exemplo:<br />
+
+        string uf = &quot;Sp&quot;;<br />
+
+        Console.Write(uf.ToUpper());<br />
+
+        <b>Length();</b> --&gt; Obtém o tamanho de uma string<br />
+
+        Exemplo:<br />
+
+        string endereco = &quot;Rua 7 de setembro, 340&quot;;<br />
+
+        Console.Write(&quot;\n&quot; + endereco);<br />
+
+        Console.Write(&quot;\nA string acima tem &quot; + endereco.Length + &quot; caracteres&quot;);<br />
+
+        <b>Substring(arg1, arg2)</b> --&gt; Permite extrair uma string dentro de outra string;<br />
+
+        Exemplo:<br />
+
+        string nomeAluno = &quot;José Angelo&quot;;<br />
+
+        Console.Write(nomeAluno.Substring(5,6));<br />
+
+        A linha acima, extrai da string nomeAluno, a string a partir da posição 5, 6 caracteres.<br />
+
+        <strong>Environment.Exit(0);</strong><br />
+
+      A linha acima encerra uma aplicação em console.
+		<hr />
+		<p><strong>Estrutura try...catch - Tratamento de exceções em C#</strong><br>
+		  <strong>O que é uma exceção</strong>
+	  <p align="justify">Uma exceção é um erro em tempo de execução em um programa, que viola uma condição que não foi especificada para acontecer durante a operação normal. Um exemplo na prática é quando um programa tenta fazer a divisão por zero ou tenta escrever em um arquivo somente leitura. Quando isto ocorre, o sistema pega o erro e lança uma exceção.</p>
+		<strong>Sintaxe:</strong>
+		try {<br>
+		  	bloco de códigos<br>
+		    }<br>
+		catch (Exception Ex){<br>
+		  	bloco de códigos<br>
+		}<br>
+		<strong>Exemplo que gera uma exceção:</strong><br>
+		int x = 5, y = 0, z;<br>
+		z = x / y;<br>
+		<strong>Exemplo:</strong><br>
+		try<br>
+		{<br>
+			int x = 5, y = 0, z;<br>
+			z = x / y;<br>
+		}<br>
+		catch(Exception)<br>
+		{<br>
+			throw;<br>
+		}
+		<hr />
+		<b>Array </b>--&gt; Permite atribuir em uma  variável, mais de um conteúdo, já que quando você declara uma variável, somente o último valor ficar armazenado na mesma. 
+
+      <p>string[] cores = new string[3];  // new cria uma nova instância<br />
+
+        cores[0] = &quot;Azul &quot;;<br />
+
+        cores[1] = &quot;Vermelho &quot;;<br />
+
+        cores[2] = &quot;Verde &quot;;<br />
+
+        Console.WriteLine(cores[0]);<br />
+
+        Console.ReadKey();</p>
+
+      <p>Será exibida a cor Azul.<br />
+      </p>
+      <hr />
+
+      <h6 class="text-primary"><a name="dicas" id="dicas"></a>Dicas - CSharp</h6>
+      <p><a href="#ordem_form">Como mudar a ordem dos forms</a><br />
+        <a href="#enter">Utilizando a tecla enter para mudar de caixa</a><br />
+        <a href="#limpar_form">Como limpar todas caixas de um form</a><br />
+        <a href="#troca_cor_fundo_form">Troca a cor de fundo do formul&aacute;rio</a><br />
+        <a href="#toca_Som">Toca som Wave - WindowsForm</a><br />        
+        <a href="#caixa_mensagem">Caixa de Mensagens com os bot&otilde;es Sim e N&atilde;o</a><br />
+        <a href="#chama_form">Chamando outro formul&aacute;rio</a><br />
+        <a href="#itens_combo">Adcionando itens no combobox - String</a><br />
+        <a href="#itens_combo2">Adicionando itens no combobox - Integer</a><br />
+        <a href="#manipulando_strings">Manipulando strings</a><br />
+        <a href="#index_of">Busca dentro de uma string (IndexOF)</a><br />
+        <a href="#numero_TextBox">Permitir apenas n&uacute;meros em um TextBox</a><br />
+        <a href="#numero_virgula">Permitir al&eacute;m de n&uacute;meros a v&iacute;rgula</a><br />
+        <a href="#textboxNaoVazio">N&atilde;o permitir que um textbox fique vazio</a><br />
+        <a href="#soPermitirLetras">S&oacute; permitir a digita&ccedil;&atilde;o de determinadas letras em um textbox</a><br />
+        <a href="#textboxNaoVazio2">N&atilde;o permitir que um textbox fique com espa&ccedil;os</a><br />
+        <a href="#soMaiusculas">S&oacute; permitir a digita&ccedil;&atilde;o de letras mai&uacute;sculas em um textbox</a><br />
+        <a href="#textboxEnter">Em um textbox de m&uacute;ltiplas linhas, permitir o enter acionar um bot&atilde;o</a><br />
+        <a href="#formatarMoeda">Formatar como moeda em um textbox</a><br />
+        <a href="#formatarMoeda2">Formatar como moeda2 em um textbox</a><br />
+        <a href="#proximaLinha">Passar para a pr&oacute;xima linha em um MessageBox</a><br />
+        <a href="#sairIF">Não executar as linhas abaixo de uma estrutura condicional if</a><br />
+        <a href="#conectionString">Armazenar e recuperar a conex&atilde;o com o banco no app.config</a><br />
+        <a href="#conexaoCS">Classe conexão com o banco de dados com usuário e senha</a><br />
+        <a href="#conexaoSS">Classe conexão com o banco de dados sem usuário e senha</a><br />
+        <a href="#verificarNulo">Utilizando o método DBNull, para verificar se uma coluna da tabela está nula (em branco) - DataReader</a> <br />
+        <a href="#dbNull_DataRow">Utilizando o método DBNull, para verificar se uma coluna da tabela está nula (em branco) - DataRow</a><br />
+        <a href="#identar_formatar">Identar estrutura de chaves</a><br />
+        <a href="#maskedTextBox_ExcluirPrompt">Excluir máscara do MaskedTextBox via código</a><br />
+        <a href="#maskedTextBox_IncluirPrompt">Incluir máscara do MaskedTextBox via código</a><br />
+        <a href="#ReiniciarAplicativo">Reiniciar o aplicativo</a><br />
+        <a href="#ValidarEmail">Validar e-mail utilizando a classe <strong>MailAddress</strong></a><br />
+        <a href="#VerificarCadastro">Verifica se o e-mail já foi cadastrado</a><br />
+        <a href="#AppConfig_BD">Configurar a conexão com o banco de dados no arquivo App.config</a><br />
+        <a href="#AppConfig">Configurar chave no arquivo App.config</a><br />
+        <a href="#Numero_Virgula2">Permitir além de números a vírgula - 2</a><br />
+        <a href="#Limpar_Controles_Forms">Limpa os controles de todos os forms</a><br />
+        <a href="#crystalReportsParametro">Relatório com parâmetro - Crystal Reports</a></p>
+      <hr />
+      <p><a name="ordem_form" id="ordem_form"></a><b>Como mudar a ordem dos forms</b></p>
+      <p>V&aacute; at&eacute; o Solution Explorer no arquivo program.cs do teu projetto, dever&aacute; aparecer l&aacute; uma linha com o seguinte   c&oacute;digo:</p>
+      <p>Application.Run(new Form1()); --&gt; <span class="comentario">onde Form1 &eacute; o nome do formul&aacute;rio que inicia a sua aplica&ccedil;&atilde;o. &Eacute; s&oacute; colocar onde est&aacute; Form1,  o formul&aacute;rio que deseja que seja o primeiro.</span></p>
+      <hr />
+
+      <p><a name="#enter" id="enter"></a><b>Utilizando a tecla enter para mudar de caixa</b></p>
+      <p>No evento <b>KeyPress</b> do formulario, insira o codigo abaixo:<br />
+        if (e.KeyChar == 13)<br />
+        {<br />
+        e.Handled = true;<br />
+        SendKeys.Send(&quot;{tab}&quot;);<br />
+        }<br />
+      </p>
+      <hr />
+      <p><a name="limpar_form" id="limpar_form"></a><b>Como limpar todas as caixas de um form</b></p>
+      <p><span class="comentario">//M&eacute;todo p&uacute;blico para limpar caixas de texto</span><br />
+        public void limpar()<br />
+        {</p>
+      <p> foreach (Control ctl in gbDados.Controls) <span class="comentario">//gbDados &eacute; o nome do groupbox onde est&atilde;o as caixas de texto </span><br />
+        {<br />
+        if (ctl is TextBox) ctl.Text = &quot;&quot;;<br />
+        if (ctl is MaskedTextBox) ctl.Text = &quot;&quot;;<br />
+        }<br />
+        }
+        <!--c2-->      </p>
+      <hr />
+      <p><a name="troca_cor_fundo_form" id="troca_cor_fundo_form"></a><b>Troca a cor de fundo do formul&aacute;rio</b></p>
+      <p>this.BackColor = System.Drawing.Color.Yellow; <span class="comentario">//Troca a cor de fundo do formul&aacute;rio</span></p>
+      <hr />
+      <p><a name="caixa_mensagem" id="caixa_mensagem"></a><b>Caixa de Mensagens com os bot&otilde;es Sim e N&atilde;o</b></p>
+      <p>if (MessageBox.Show(&quot;Deseja realmente sair ?&quot;, &quot;Sair&quot;, MessageBoxButtons.YesNo) == DialogResult.Yes)<br />
+        {<br />
+        Close();<br />
+        }<br />
+        <span class="comentario"><u>Se pressionar o bot&atilde;o Sim o formul&aacute;rio ser&aacute; fechado - Os dois sinais de igual, &eacute; utilizado na estrutura condicional.</u></span></p>
+      <hr />
+      <p><a name="itens_combo" id="itens_combo"></a><b>Adicionando itens no combobox - String</b></p>
+      <p>D&ecirc; um duplo clique dentro do formul&aacute;rio. No evento load (entre o private void() e as chaves), digite o c&oacute;digo abaixo:<br />
+        cmbUF.Items.Add(&quot;AC&quot;);<br />
+        cmbUF.Items.Add(&quot;BA&quot;); <br />
+        cmbUF.Items.Add(&quot;GO&quot;);</p>
+      <hr />
+      <p><a name="itens_combo2" id="itens_combo2"></a><b>Adicionando itens no combobox - Integer</b></p>
+      <p>int a = 0;<br />
+        for (a = 1; a &lt; 11; a++)<br />
+        {<br />
+        comboBox1.Items.Add(a).ToString();<br />
+        }</p>
+      <hr />
+      <p><a name="chama_form" id="chama_form"></a><b>Chamando outro formul&aacute;rio</b></p>
+      <p>frmSobre formSobre = new frmSobre(); // <span class="comentario">Cria a inst&acirc;ncia de nome formSobre, referente ao formul&aacute;rio frmSobre</span><br />
+        formSobre.ShowDialog(); <span class="comentario">// Exibe o formul&aacute;rio</span><br />
+      </p>
+      <hr />
+      <p><a name="manipulando_strings" id="manipulando_strings"></a><b>Manipulando strings</b></p>
+      <p><span class="comentario">//<b>Converte o texto para mai&uacute;sculo</b></span><br />
+        lblResultado.Text = txtTexto.Text.ToUpper(); <br />
+        <span class="comentario">//Converte o texto para min&uacute;sculo</span><br />
+        lblResultado.Text = txtTexto.Text.ToLower();<br />
+        <span class="comentario">//Extrai da caixa de texto, o conteúdo que inicia na primeira posi&ccedil;&atilde;o, pegando assim tr&ecirc;s caracteres</span><br />
+        lblResultado.Text = txtTexto.Text.Substring(0,3);</p>
+      <hr />
+      <a name="index_of" id="index_of"></a><span class="style1"><b>Mostra em que posi&ccedil;&atilde;o encontrou a string</b><br />
+      int posicao = txtTexto.Text.IndexOf(&quot;eres&quot;);<br />
+      lblResultado.Text = &quot;&quot; + posicao;<br />
+      <span class="comentario">Observa&ccedil;&atilde;o: Se voc&ecirc; digitar na caixa de texto txtTexto, a string Elidia Peres, ser&aacute; exibido a posi&ccedil;&atilde;o 8.</span>
+      </p>
+      <hr />
+      <p><a name="toca_Som" id="toca_Som"></a><strong>Toca som Wave - WindowsForm</strong></p>
+        System.Media.SoundPlayer som = new System.Media.SoundPlayer();<br />
+            som.SoundLocation = @"C:\raiz\Hold Tight.wav";<br />
+            som.Load();<br />
+            som.Play();<br />
+<hr>
+      <p><a name="numero_TextBox" id="numero_TextBox"></a><b>Permitir apenas n&uacute;meros em um TextBox</b><br />
+        Selecione o textbox. Vá na janela Properties e no botão Events, selecione o evento KeyPress. Duplo clique no mesmo. Digite a codificação abaixo: <br />
+        if (!Char.IsDigit(e.KeyChar) &amp;&amp; e.KeyChar != (char)8) // Se a tecla pressionada não for número E a tecla pressionada não for Backspace E a tecla pressionada não for Delete<br />
+        {<br />
+        e.Handled = true; // Bloqueia as demais teclas<br />
+        }</p>
+      <p>&nbsp;</p>
+      <hr />
+      <a name="numero_virgula" id="numero_virgula"></a><b>Permitir al&eacute;m de n&uacute;meros a v&iacute;rgula</b><br />
+      Selecione o textbox. Vá na janela Properties e no botão <b>Events</b>, selecione o evento <b>KeyPress</b>. Duplo clique no mesmo. Digite a codificação abaixo:<br />
+      if (!Char.IsDigit(e.KeyChar) &amp;&amp; e.KeyChar != (char)8 &amp;&amp; e.KeyChar != (char)126 &amp;&amp; e.KeyChar != (char)44) // Se a tecla pressionada não for número E a tecla pressionada não for Backspace E a tecla pressionada não for Delete E se a tecla pressionada não for igual ao vírgula<br />
+      {<br />
+      e.Handled = true; // Bloqueia as demais teclas<br />
+      }
+      <hr />
+      <a name="textboxNaoVazio" id="textboxNaoVazio"></a><b>N&atilde;o permitir que um textbox fique vazio</b><br />
+      <u>Duplo clique no botão de confirmação. Digite a codificação abaixo:</u> <br />
+      if (string.IsNullOrEmpty(txtNome.Text)) // propriedade IsNullOrEmpty n&atilde;o permite que a textbox receba um valor nulo ou que o mesmo  fique vazio.<br _extended="true" />
+      {<br _extended="true" />
+      &nbsp;&nbsp;&nbsp;MessageBox.Show(&quot;Informe o Nome&quot;);<br _extended="true" />
+      }
+      <hr />
+      <a name="textboxNaoVazio2" id="textboxNaoVazio2"></a><b>N&atilde;o permitir que um textbox fique com espa&ccedil;os</b><br />
+      <u>Duplo clique no botão de confirmação. Digite a codificação abaixo:</u><br />
+      if (<span _extended="true">string.IsNullOrEmpty</span>(<span _extended="true">txtNome.Text.Trim()</span>))<br />
+      {<br _extended="true" />
+      &nbsp;&nbsp;&nbsp;MessageBox.Show(&quot;Informe o Nome&quot;);<br _extended="true" />
+      }
+      <hr />
+      <a name="soPermitirLetras" id="soPermitirLetras"></a><b>S&oacute; permitir a digita&ccedil;&atilde;o de determinadas letras em um textbox</b><br />
+      Selecione o textbox. Vá na janela Properties e no botão <b>Events</b>, selecione o evento <b>KeyPress</b>. Duplo clique no mesmo. Digite a codificação abaixo: <br />
+      if ((e.KeyChar != 'A') &amp;&amp; (e.KeyChar != 'D') &amp;&amp; e.KeyChar != (char)8)<br />
+      e.Handled = true;
+      <hr />
+      <a name="soMaiusculas" id="soMaiusculas"></a><b>S&oacute; permitir a digita&ccedil;&atilde;o de letras mai&uacute;sculas em um textbox</b><br />
+      Selecione o textbox. Vá na janela Properties e no botão <b>Events</b>, selecione o evento <b>KeyPress</b>. Duplo clique no mesmo. Digite a codificação abaixo: <br />
+      txtNome.CharacterCasing = CharacterCasing.Upper; //Se utilizar no lugar de <b>Upper</b> o método <b>Lower</b>, s&oacute; permitir&aacute; a digira&ccedil;&atilde;o de min&uacute;sculas
+      <hr />
+      <p><a name="textboxEnter" id="textboxEnter"></a><b>Em um textbox de m&uacute;ltiplas linhas, permitir o enter acionar um bot&atilde;o</b><br />
+        txtValor.AcceptsReturn = false; </p>
+      <hr />
+      <p><a name="formatarMoeda" id="formatarMoeda"></a><b>Formatar como moeda em um textbox</b><br />
+        Selecione o textbox. Vá na janela Properties e no botão <b>Events</b>, selecione o evento <b>Leave</b> <i>(o evento <b>Leave</b> ocorre, quando perde o foco da caixa de textos</i>). Duplo clique no mesmo. Digite a codificação abaixo: <br />
+        txttotalGeral.Text = Convert.ToDecimal(txttotalGeral.Text).ToString(&quot;R$ ##,##0.00&quot;);</p>
+      <hr />
+      <p><b><a name="formatarMoeda2" id="formatarMoeda2"></a>Formatar como moeda2 em um textbox</b><br />
+        Selecione o textbox. Duplo clique no Evento <strong>Leave</strong>, e insira o código abaixo <em>(observe que o exemplo da caixa de texto é txtSalario, portanto insira o nome correto da caixa que deseja formatar)</em>:<br />
+      txtSalario.Text = string.Format(&quot;{0:C}&quot;, Convert.ToDouble(txtSalario.Text));</p>
+      <hr />
+      <p><a name="proximaLinha" id="proximaLinha"></a><b>Passar para a pr&oacute;xima linha em um MessageBox</b><br />
+        Environment.NewLine.<br />
+        Exemplo:<br />
+        if (MessageBox.Show(&quot;Deseja realmente sair?&quot; + Environment.NewLine + &quot;Fim da Aplicação!&quot;, &quot;Sair do Programa&quot;, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)<br />
+        {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.Dispose();<br />
+      }</p>
+      <hr />
+      <p><a name="sairIF" id="sairIF"></a><b>Não executar as linhas abaixo de uma estrutura condicional if</b><br />
+        if (txtsubTotal.Text == &quot;&quot;)<br />
+        {<br />
+        MessageBox.Show(&quot;Informe o Sub-Total!&quot;, &quot;Total&quot;, MessageBoxButtons.OK);<br />
+        txtsubTotal.Focus();<br />
+        return; //N&atilde;o executa as linhas que estiverem depois da chave que fecha este bloco de if<br />
+        }</p>
+      <hr />
+      <p><a name="conectionString" id="conectionString"></a><strong>Armazenar a conex&atilde;o com o banco no app.config</strong><br />
+        Para criar o arquivo app.config, clique com o bot&atilde;o direito sobre o projeto no Solution Explorer e selecione Add / New Item e abra: Application Configuration File.<br />
+        Entre as tags Configuration, coloque o c&oacute;digo abaixo:<br />
+        &lt;connectionStrings&gt;<br />
+        &lt;add name=&quot;conexao&quot; connectionString=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=bd; Integrated Security=True;&quot; providerName=&quot;sqlClient&quot;/&gt;<br />
+        <br />
+        &lt;/connectionStrings&gt;</p>
+      <hr />
+      <p><i>Esta string &eacute; para o banco de dados SQLSERVER EXPRESS, e o nome do banco &eacute; bd</i>.</p>
+      <hr />
+      <p><strong>Recuperando dentro do projeto em C#:</strong><br />
+        Adicione as refer&ecirc;ncias:<br />
+        using System.Configuration;<br />
+        using System.Data.SqlClient;</p>
+      <p><b>Dentro do Form Load:</b><br />
+        //Para acessar o ConfigurationManager, clique com o bot&atilde;o direito do mouse no Solution Explorer no nome do projeto e selecione Add Reference. Selecione System.Configuration<br />
+        string strConexao = ConfigurationManager.ConnectionStrings[&quot;conexao&quot;].ConnectionString;<br />
+        lblConexao.Text = strConexao;<br />
+        SqlConnection cn = new SqlConnection(strConexao);<br />
+        cn.Open();<br />
+        MessageBox.Show(&quot;Conectou&quot;);<br />
+        cn.Close();</p>
+      <hr />
+      <p><b>Utilizando o recurso dentro do App.Config, porém com a utilização de senha:</b><br />
+        &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;<br />
+        &lt;configuration&gt;<br />
+        &lt;connectionStrings&gt;<br />
+        &lt;add name=&quot;conexao&quot; connectionString=&quot;Data Source=.\SQLEXPRESS;Initial Catalog=bd; User id=sa; Password=sa;&quot; providerName=&quot;sqlClient&quot;/&gt;<br />
+        &lt;/connectionStrings&gt;<br />
+      &lt;/configuration&gt; </p>
+      <hr />
+      <p><a name="verificarNulo" id="verificarNulo"></a><b>Utilizando o método DBNull, para verificar se uma coluna da tabela está nula (em branco)</b><br />
+        if (!(dr[&quot;nome&quot;].Equals(System.DBNull.Value))) <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtNome.Text = dr[&quot;nome&quot;].ToString();<br />
+        <b>Observação:</b> Senão a coluna nome não for nula, o conteúdo da mesma é armazenado no textbox txtNome. Este exemplo é para a classe <strong>DataReader</strong>.</p>
+      <hr />
+      <p><b><a name="dbNull_DataRow" id="dbNull_DataRow"></a>Utilizando o método DBNull, para verificar se uma coluna da tabela está nula (em branco)</b><br />
+        if(!linha[&quot;email&quot;].Equals(System.DBNull.Value))<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtEmail.Text = linha[&quot;nome&quot;].ToString();<br />
+<b>Observação:</b> Senão a coluna nome não for nula, o conteúdo da mesma é armazenado no textbox txtNome. Este exemplo é para a classe <strong>DataRow</strong>.</p>
+      <hr />
+      <p><strong><a name="conexaoSS" id="conexaoSS"></a>Classe conexão com o banco de dados sem usuário e senha</strong><br />
+        No exemplo abaixo, o nome do projeto é controleComissao. Observe o namespace que é o nome do projeto. Para inserir o código abaixo, crie a classe clsComissao e antes do class clsConexao, insira public. Após a chave de abertura, coloque a codificação abaixo:
+      </p>
+      <p>namespace controleComissao<br />
+        {<br />
+public class clsConexao<br />
+{<br />
+private static string conexao = @&quot;Data Source=.\SQLEXPRESS;Initial Catalog=bdComissao; Integrated Security=True&quot;;<br />
+public static string stringConexao<br />
+{<br />
+get<br />
+{<br />
+return conexao;<br />
+}<br />
+}<br />
+}<br />
+}</p>
+      <hr />
+      <p><strong><a name="conexaoCS" id="conexaoCS"></a>Classe conexão com o banco de dados com usuário e senha</strong><br />
+No exemplo abaixo, o nome do projeto é controleComissao. Observe o namespace que é o nome do projeto. Para inserir o código abaixo, crie a classe clsComissao e antes do class clsConexao, insira public. Após a chave de abertura, coloque a codificação abaixo: </p>
+      <p>namespace controleComissao<br />
+        {<br />
+        public class clsConexao<br />
+        {<br />
+        private static string conexao = @&quot;Data Source=.\SQLEXPRESS;Initial Catalog=bdComissao;user id=sa;password=admin123456&quot;;<br />
+        public static string stringConexao<br />
+        {<br />
+        get<br />
+        {<br />
+        return conexao;<br />
+        }<br />
+        }<br />
+        }<br />
+      }</p>
+      <hr />
+      <p><strong><a name="identar_formatar" id="identar_formatar"></a>Identar estrutura de chaves</strong><br />
+        CTRL + k, F -&gt; Formata o que estiver selecionado.<br />
+CTRL + k,d -&gt; Formata o documento inteiro.</p>
+      <hr />
+      <p><a name="maskedTextBox_ExcluirPrompt" id="maskedTextBox_ExcluirPrompt"></a><strong>Excluir máscara do MaskedTextBox via código</strong><br />
+        Quando você vai fazer validação com caixas MaskedTextBox, fica bem fácil excluindo a máscara. <strong>Exemplo:</strong><br />
+      mskdataNascimento.<strong>TextMaskFormat = MaskFormat.ExcludePromptAndLiterals</strong>; <br />
+      var valorSemMascara = mskdataNascimento.Text;      // Foi criada a variável valorSemMascara, onde a mesma recebe<br />
+      o conteúdo do maskedTextBox sem a máscara. É através desta variável que você fará a validação. <strong>Exemplo:</strong><br />
+      <strong>if</strong> (valorSemMascara == &quot;&quot;) // Se a Data de Nascimento estiver em branco<br />
+{<br />
+
+<strong>MessageBox.Show</strong>(&quot;Informe a Data de Nascimento!&quot;, &quot;Data de Nascimento&quot;, MessageBoxButtons.OK, MessageBoxIcon.Information);<br />
+mskdataNascimento.<strong>Focus()</strong>; // Coloca o foco na caixa de texto <br />
+<strong>return</strong>; // Não executa as linhas abaixo da chave de fechamento abaixo<br />
+}      </p>
+      <hr />
+      <p><strong><a name="maskedTextBox_IncluirPrompt" id="maskedTextBox_IncluirPrompt"></a>Incluir máscara do MaskedTextBox via código</strong><br />
+        Ao contrário do exemplo acima, antes de salvar na tabela, é importante incluir a máscara. <strong>Exemplo:</strong><br />
+      mskdataNascimento.<strong>TextMaskFormat = MaskFormat.IncludePromptAndLiterals; <!--- makes the column width right in NS --->
+        <img src="images/space.gif" width="120" height="1" />
+    <!--- end spacer --->    </strong></p>
+    <hr />
+    <p><a name="crystalReportsParametro" id="crystalReportsParametro"></a><strong>Relatório com parâmetro - Crystal Reports</strong></p>
+    <p>private void btnImprimir_Click(object sender, EventArgs e)<br />
+      {<br />
+      ReportDocument relatorio = new ReportDocument(); // Instancia o relatório<br />
+      string strnomeRelatorio = &quot;Pedido&quot;;<br />
+      relatorio.Load(&quot;C:\\Users\\Edson\\Documents\\Visual Studio 2015\\Projects\\Distribuidora&quot; + &quot;\\&quot; + strnomeRelatorio + &quot;.rpt&quot;); // Carrega o relatório</p>
+    <p>// Define instanciando os itens que carregarão o(s) parâmetro(s)<br />
+      ParameterFieldDefinitions crParameterFieldDefinitions;<br />
+      ParameterFieldDefinition crParameterFieldDefinition;<br />
+      ParameterValues crParameterValues = new ParameterValues();<br />
+      ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();</p>
+    <p> crParameterDiscreteValue.Value = txtcodigoPedido.Text; // Passa o conteúdo informado na caixa de textos como parâmetro para o Crystal Reports filtrar<br />
+      crParameterFieldDefinitions = relatorio.DataDefinition.ParameterFields;<br />
+      crParameterFieldDefinition = crParameterFieldDefinitions[&quot;codigoPedido&quot;]; // Nome do parâmetro criado no Crystal Reports<br />
+      crParameterValues = crParameterFieldDefinition.CurrentValues;</p>
+    <p> crParameterValues.Clear();<br />
+      crParameterValues.Add(crParameterDiscreteValue);<br />
+      crParameterFieldDefinition.ApplyCurrentValues(crParameterValues);</p>
+    <p> rptComissao.ReportSource = relatorio; // Exibe o relatório<br />
+      rptComissao.Refresh();<br />
+    }</p>
+    <hr />
+    <p><a name="ReiniciarAplicativo"></a><strong>Reiniciar Aplicativo</strong><br>
+      Application.Restart();
+      </p>
+      <hr>
+      <p><a name="ValidarEmail"></a><strong>Validar Email</strong> - Inserir o bloco de códigos abaixo no botão <strong>Salvar</strong>, ou mesmo no evento <strong>Leave</strong> da caixa de textos de e-mail.<br>
+        try // Verifica se o e-mail é válido<br>
+            {<br>
+                var endereco = new System.Net.Mail.MailAddress(txtEmail.Text);<br>
+            }<br>
+            catch<br>
+            {<br>
+                MessageBox.Show("E-mail Inválido!", "E-mail", MessageBoxButtons.OK);<br>
+                txtEmail.Focus();<br>
+                return;<br>
+            }<br>
+      </p>
+      <hr>
+      <p><a name="VerificarCadastro"></a><strong>Verifica se o e-mail já foi cadastrado</strong>.<br>
+        clsVendedor classeVendedor = new clsVendedor();<br>
+        DataTable resultado = classeVendedor.pesquisa_Email(txtEmail.Text);<br>
+        if (resultado.Rows.Count >0) // Verifica se o e-mail está cadastrado<br>
+        {<br>
+            DataRow linha = resultado.Rows[0];<br>
+            MessageBox.Show("E-mail já cadastrado!", "Cadastrar Vendedor", MessageBoxButtons.OK);<br>
+            return;<br>
+        }<br>
+
+      </p>
+      <hr>
+      <p><a name="AppConfig_BD"></a><strong>Configurar conexão com banco de dados no arquivo App.config</strong>.<br>
+        <img src="imagens/AppConfig_BD.png" alt="Configurar conexão com banco de dados no arquivo App.config">
+        <strong>Na classe ou em outro objeto, vamos recuperar o que foi salvo no App.Config. Veja abaixo:</strong>
+        string connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;<br>
+            using (SqlConnection conexao = new SqlConnection(connectionString))<br>
+      </p>
+      <hr>
+      <p>
+        <a name="AppConfig"></a><strong>Configurar chave no arquivo App.Config</strong><br>
+        <appSettings>
+          <add key="InsiraAquiAChave" value="ConteudoDaChave"/>
+          
+        </appSettings>
+
+        No formulário ou qualquer outro objeto:<br>
+        // Lê o valor da chave "NomeDaChave" através do add key no app.config<br>
+            TextBox1.Text = ConfigurationManager.AppSettings["NomeEmpresa"];<br>
+      </p>
+      <hr>
+      <p>
+        <a name="Numero_Virgula2"></a><strong>Permitir além de números a vírgula - 2.</strong><br>
+        <strong>No Evento KeyPress da Caixa de Textos (TextBox, MaskedTextBox), deixe como abaixo:</strong><br>
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8 && e.KeyChar != (char)126) //se não for número, senão for backspace, senão for delete<br>
+            {<br>
+                if (e.KeyChar != ',') //se for vírgula<br>
+                    e.Handled = true;<br>
+                else if (txtValor.Text.IndexOf(',') > 0)<br>
+                    e.Handled = true;<br>
+            }<br>
+      </p>
+      <hr>
+      <p>
+        <a name="Limpar_Controles_Forms"></a><strong>Limpa os controles de todos forms.</strong><br>
+          Você pode criar uma classe estática, veja o exemplo abaixo da classe <strong>clsGlobal</strong>, que está dentro do <strong>namespace controleComissao</strong>, que é o nome do projeto.<br>
+          using System;<br>
+using System.Collections.Generic;<br>
+using System.Linq;<br>
+using System.Text;<br>
+using System.Threading.Tasks;<br>
+using System.Windows.Forms; // <strong>Insira esta biblioteca, pois ela é obrigatória para utilizar os controles, comandos do FrameWork</strong><br>
+<br>
+namespace controleComissao<br>
+{<br>
+    public static class clsGlobal<br>
+        public static string nome;<br>
+        <br><br>
+        public static void LimparControles(GroupBox groupBox)<br>
+        {<br>
+            foreach (Control ctl in groupBox.Controls)<br>
+            {<br>
+                if (ctl is TextBox) ((TextBox)ctl).Text = "";<br>
+                else if (ctl is MaskedTextBox) ((MaskedTextBox)ctl).Text = "";<br>
+                else if (ctl is ComboBox) ((ComboBox)ctl).Text = "";<br>
+                else if (ctl is CheckBox) ((CheckBox)ctl).Checked = false;<br>
+            }<br>
+        }<br>
+    }<br>
+}<br>
+<strong>Onde:</strong> - <strong>GroupBox foi utilizada a referência (using System.Windows.Forms;)</strong>, para permitir dentro da classe, reconhecer os controles, como: GroupBox, TextBox. <strong>Comandos como:</strong> if, else if, etc.<br>
+<strong>Como chamar este método dentro de qualquer form:</strong><br>
+clsGlobal.LimparControles(gpbDados);<br>
+<strong>Onde: - clsGlobal</strong> é o nome da classe - <strong>Limpar_Controles_Forms</strong> é o nome do método - <strong>gpbDados</strong> é o nome do groupbox do formulário atual.<br>
+      </p>
+  </td>
+
+  </tr>
+
+</table>
+
+</body>
+
+</html>
+

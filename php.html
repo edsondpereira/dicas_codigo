@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos.css">
+  <!--Arquivo CSS -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" />
+  <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <p><img src="imagens/php.png" width="240" height="212" alt="PHP - mySQL" /></p>
+    <h3>Dicas</h3>
+    <p><a href="#botaoJavascript">Criação de botão em Javascript para abrir outra página</a><br />
+      <a href="#funcaoIsset">Verificando se o conteúdo uma variável da sessão está em branco</a><br />
+      <a href="#funcaoRequire">Importando arquivo php para a página atual</a><br />
+      <a href="#preenchendoTabela">Preenchendo uma tabela com os registros de uma determinada tabela</a><br />
+      <a href="#chamandoPaginaForm">Chamando uma página através de um botão do formulário</a><br />
+      <a href="#armazenaMetodoPost">Armazena nas variáveis $cidade e $uf, o que foi digitado no formulário</a><br />
+      <a href="#funcaoEmpty">Verificar se o campo cidade está em branco</a><br />
+      <a href="#armazenaSessao">Armazena o conteúdo de cada variável na sessão</a><br />
+      <a href="#funcaoRows">Verifica se a cidade foi cadastrada na tabela</a><br />
+      <a href="#funcaoInsert">Insere na tabela se tudo estiver OK</a>
+    </p>
+    <p><a name="botaoJavascript" id="botaoJavascript"></a><b>Criação de botão em Javascript para abrir outra página</b>
+    </p>
+    <p>Insira as linhas abaixo (entre as tags &lt;script...&gt; &lt;/script&gt;), antes do fechamento da tag
+      (&lt;/head&gt;)</p>
+    <p>&lt;script LANGUAGE=&quot;JavaScript&quot;&gt;<br />
+      function btnCancelar()<br />
+      {<br />
+      &lt;?php<br />
+      session_start();<br />
+      session_destroy();<br />
+      ?&gt;<br />
+      document.frmCidade.action=&quot;principal.php&quot;;<br />
+      document.forms.frmCidade.submit();<br />
+      }<br />
+      &lt;/script&gt; </p>
+    <p>onde:<br />
+      - session_start() --&gt; inicia a sessão da página em PHP<br />
+      - session_destroy() --&gt; como estamos fechando a página, todas as sessões serão apagadas<br />
+      - document.frmCidade --&gt; nome do formulário<br />
+      - action=&quot;principal.php --&gt; página que será aberta, quando houver o click do botão<br />
+      - document.forms.frmCidade.submit(); --&gt; faz a ação do botão executar
+      a página</p>
+    <p>A linha abaixo, é para ser inserida entre as tags &lt;form&gt; &lt;/form&gt;</p>
+    <p>&lt;input type=button onclick=btnCancelar() value=Fechar&gt;&lt;/input&gt;<br />
+      - A linha acima, indica que o tipo de objeto do formulário é um botão; o evento a ser disparado será o click,
+      chamando a função btnCancelar criada logo acima; o texto que vai ser exibido no botão é Fechar</p>
+    <hr />
+    <p> <a name="funcaoIsset" id="funcaoIsset"></a><b>Verificando se o conteúdo uma variável da sessão está em
+        branco</b></p>
+    <p>&lt;?php <br />
+      if (isset($_SESSION[&quot;cidade&quot;])) $cidade = $_SESSION[&quot;cidade&quot;];<br />
+      if (isset($_SESSION[&quot;uf&quot;])) $uf = $_SESSION[&quot;uf&quot;];<br />
+      ?&gt;</p>
+    <p>onde:<br />
+      A função isset acima verifica se as variáveis da sessão estão com valor.
+      Caso positivo, o valor contido dentro da variável da sessão $_SESSION[&quot;cidade&quot;], é armazenada na
+      variável $cidade.</p>
+    <hr />
+    <p><a name="funcaoRequire" id="funcaoRequire"></a><b>Importando arquivo php para a página atual</b></p>
+    <p>require &quot;../conexao.php&quot;;</p>
+    <p>onde:<br />
+      - require --&gt; função em php que permite importar um arquivo para a página atual.<br />
+      - conexao.php --&gt; página que será importada. Assim, toda vez que você precisar do conteúdo existente na página
+      conexao.php, é só utilizar a função require. Isso evitará que em várias páginas, haja duplicação de código.</p>
+    <hr />
+    <p><a name="preenchendoTabela" id="preenchendoTabela"></a><b>Preenchendo uma tabela com os registros de uma
+        determinada tabela</b><br />
+      $sSQL=&quot;SELECT idcidade, cidade, uf FROM cidade ORDER BY cidade&quot;; // Seleciona as colunas: idcidade,
+      cidade e uf da tabela (from) cidade, classificada (order by) pela coluna cidade<br />
+      $resultado=mysql_query($sSQL) or die (&quot;Erro ao selecionar os dados da tabela cidade!&quot;); // Executa a
+      consulta que foi armazenada na variável $sSQL, através da função mysql_query. Caso haja algum erro (or die), será
+      apresentada a mensagem de erro</p>
+    <p>echo &quot;&lt;table width='500' border='0' cellpading='0' cellspacing='0' align='center'&gt;&quot;;<br />
+      echo &quot;&lt;tr&gt;&quot;;<br />
+      echo &quot;&lt;th width=100&gt;Código&lt;/th&gt;&quot;;<br />
+      echo &quot;&lt;th width=300&gt;Cidade&lt;/th&gt;&quot;;<br />
+      echo &quot;&lt;th width=100&gt;UF&lt;/th&gt;&quot;;<br />
+      echo &quot;&lt;th width=50&gt;Editar&lt;/th&gt;&quot;;<br />
+      echo &quot;&lt;/tr&gt;&quot;;<br />
+      <br />
+      //Enquanto (while) a tabela não chegar até o final<br />
+      while ($linha=mysql_fetch_array($resultado)) { // A função mysql_fetch_array, armazena as colunas e as linhas,
+      referente a string $resultado. Esta string, contém a consulta feita acima pela função mysql_query na tabela
+      cidade<br />
+      $idCidade = $linha[&quot;idcidade&quot;]; // Armazena o conteúdo que está na coluna idcidade através da instrução
+      $linha[&quot;idcidade&quot;] na variável $idcidade<br />
+      $cidade = $linha[&quot;cidade&quot;];<br />
+      $uf = $linha[&quot;uf&quot;];
+    </p>
+    <p>//Lista o conteúdo de cada campo em cada célula da tabela<br />
+      echo &quot;&lt;tr&gt;&quot;;<br />
+      echo &quot;&lt;td width=100&gt;$idCidade&lt;/td&gt;&quot;;<br />
+      echo &quot;&lt;td width=300&gt;$cidade&lt;/td&gt;&quot;;<br />
+      echo &quot;&lt;td width=100&gt;$uf&lt;/td&gt;&quot;;<br />
+      echo &quot;&lt;td width=50&gt;&lt;a
+      href='cidadeEditar.php?idCidade=$idCidade'&gt;Editar&lt;/a&gt;&lt;/td&gt;&quot;; // Cria o link para armazenar o
+      id da cidade através de a href='cidadeEditar.php?idCidade=$idCidade'&gt;Editar&lt;/a&gt;. Quando o usuário clicar
+      na linha referente a cidade desejada, será aberta a página cidadeEditar.php.<br />
+      }<br />
+      echo &quot;&lt;/table&gt;&quot;;<br />
+      ?&gt;</p>
+    <hr />
+    <p><a name="chamandoPaginaForm" id="chamandoPaginaForm"></a><b>Chamando uma página através de um botão do
+        formulário</b><br />
+      &lt;form name=&quot;frmCidade&quot; method=&quot;POST&quot; action=&quot;cidadeInserir.php&quot;&gt;</p>
+    <p>onde:<br />
+      - form name --&gt; indica o nome do formulário<br />
+      - method=&quot;post&quot; --&gt; método utilizado. Este método ao contrário do get, não exibe na barra de
+      endereços, o conteúdo de cada campo<br />
+      - action=&quot;cidadeInserir.php&quot; --&gt; página que será aberta, quando houver o click do botão que deverá
+      estar como submit no formulário</p>
+    <hr />
+    <p><a name="armazenaMetodoPost" id="armazenaMetodoPost"></a><b>Armazena nas variáveis $cidade e $uf</b>, o que foi
+      digitado no formulário (página cidade.php), pelo método post $_POST[&quot;cidade&quot;] e
+      $_POST[&quot;uf&quot;];<br />
+      $cidade = $_POST[&quot;cidade&quot;];<br />
+      $uf = $_POST[&quot;uf&quot;];</p>
+    <hr />
+    <p><a name="funcaoEmpty" id="funcaoEmpty"></a><b>Verificar se o campo cidade está em branco</b><br />
+      if(empty($cidade)){<br />
+      $mensagem.=&quot;Você não informou a Cidade!&lt;br&gt;&quot;;<br />
+      $erro++;<br />
+      }</p>
+    <p>onde:<br />
+      - A função empty verifica se o conteúdo existente em uma variável está em branco. Em caso positivo, no exemplo
+      acima, é armazenada na variável mensagem, o texto &quot;Você não informou a Cidade!&lt;br&gt;&quot;. O .=, é para
+      concatenar (juntar), uma mensagem já armazenada antes, pois caso contrário faria a substituição.<br />
+      Após a linha: &lt;?php, que se encontra no início da página, crie as variáveis:<br />
+      $erro=0;<br />
+      $mensagem=&quot;&quot;; </p>
+    <blockquote>
+      <p>onde:<br />
+        - $erro=0 --&gt; Permite controlar a existência de erros dentro da página.<br />
+        -
+        $mensagem --&gt; Permite armazenar o texto que será exibido depois, referente aos erros encontrados</p>
+    </blockquote>
+    <hr />
+    <p><a name="armazenaSessao" id="armazenaSessao"></a><b>Armazena o conteúdo de cada variável na sessão</b><br />
+      $_SESSION[&quot;cidade&quot;] = $cidade;<br />
+      $_SESSION[&quot;uf&quot;] </p>
+    <hr />
+    <p><b><a name="funcaoRows" id="funcaoRows"></a>Verifica se a cidade foi cadastrada na tabela</b><br />
+      $sSQL=mysql_query(&quot;SELECT * FROM cidade WHERE cidade='$cidade'&quot;);<br />
+      $resultado=mysql_num_rows($sSQL);</p>
+    <p>onde:<br />
+      A função
+      mysql_num_rows, obtém a quantidade de linhas (registros) que estão salvas na tabela.</p>
+    <hr />
+    <p><a name="funcaoInsert" id="funcaoInsert"></a><b>Insere na tabela se tudo estiver OK</b><br />
+      $sql =&quot;INSERT INTO cidade(cidade, uf) VALUES('$cidade','$uf')&quot;;<br />
+      mysql_query($sql) or die (&quot;Erro ao Inserir na tabela de Cidade&quot;); //Tenta inserir</p>
+    <p>onde:<br />
+      -
+      INSERT INTO cidade(cidade, uf) --&gt; insere na tabela cidade, nas colunas: cidade e uf<br />
+      -
+      VALUES('$cidade','$uf')&quot;--&gt; o conteúdo armazenado nas variáveis: '$cidade','$uf'<br />
+      - mysql_query($sql) --&gt; tenta inserir na tabela. Caso não consiga, a função or die, apresenta a mensagem entre
+      parênteses e aspas</p>
+    <hr />
+    <p><br />
+    </p>
+  </div>
+</body>
+
+</html>
